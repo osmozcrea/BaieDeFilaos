@@ -2,7 +2,6 @@
 
 La baie de filaos est une plateforme web de gestion de réservation de titre foncier. 
 Application développée en PHP, il est structuré suivant le pattern MVC. Il s'agit donc du PHP orienté objet.
-Vous trouverez ci dessous l'architecture du projet et le nécessaire pour le déploiement
 
 ## Getting Started
 
@@ -11,7 +10,7 @@ Voir le déploiement pour les notes sur la façon de déployer le projet sur un 
 
 ### prérequis
 
-Pour l'éxécution du projet vous aurez besoin des éléments suivant:
+Pour l'éxécution du projet vous aurez besoin des éléments suivants:
 
 ```
 * Serveur d'application apache
@@ -21,8 +20,8 @@ NB: Un environnement de type WAMP/LAMP suffirait
 
 ### Installation
 
-Après avoir cloné le projet, copier l'ensemble des fichiers sur le serveur d'application (dans le répertoire wwww s'il s'agit d'un environnement WAMP/LAMP).
-Par la suite, exécuter le script de création de la base de données que vous trouverez à la racine du site (ou l'importer depuis l'interface de PHPMySQL).
+Après avoir cloné le projet, copiez l'ensemble des fichiers sur le serveur d'application (dans le répertoire wwww s'il s'agit d'un environnement WAMP/LAMP).
+Par la suite, exécuter le script de création de la base de données que vous trouverez à la racine du site (ou l'importer depuis l'interface de PHPMyAdmin).
 Après ces deux étapes, votre projet est prêt.
 
 ## Exécution des tests
@@ -41,18 +40,16 @@ Après ces deux étapes, votre projet est prêt.
 
 -
 
-## Outils de développement
+## Outils
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Bootstrap](http://getbootstrap.com/) - Framework CSS
 
-## Authors
+## Auteur
 
-* **Yannick N'GUESSAN** - *Initial work* - [PurpleBooth](https://github.com/NOYAF1er)
+* **Yannick N'GUESSAN** - *Initial work* - [NOYAF1er](https://github.com/NOYAF1er)
 * **Fernand N'DA** - *Initial work*
 
-See also the list of [contributors](https://github.com/osmozcrea/BaieDeFilaos/contributors) who participated in this project.
+Voir aussi la liste des [contributeurs](https://github.com/osmozcrea/BaieDeFilaos/contributors) qui participent au projet.
 
 ## License
 
