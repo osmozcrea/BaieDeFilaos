@@ -24,6 +24,10 @@ Après avoir cloné le projet, copiez l'ensemble des fichiers sur le serveur d'a
 Par la suite, exécuter le script de création de la base de données que vous trouverez à la racine du site (ou l'importer depuis l'interface de PHPMyAdmin).
 Après ces deux étapes, votre projet est prêt.
 
+## Détail de l'arborescence du projet
+
+
+
 ## Exécution des tests
 
 -
