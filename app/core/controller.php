@@ -28,7 +28,7 @@ class Controller
             $this->vars = array_merge($this->vars, $data);
             extract($this->vars); //Crée des variables à partir des index du tableaux en paramètre
         }
-        require(ROOT . 'views/' . get_class($this) . '/' . $filename . '.php');
+        require_once(ROOT . 'views/' . get_class($this) . '/' . $filename . '.php');
     }
 
     /**

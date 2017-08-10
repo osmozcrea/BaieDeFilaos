@@ -1,7 +1,7 @@
 <?php
 
 $bdAccessDev = [
-    "bdName" => "baie_de_filaos",
+    "bdName" => "id2435357_baie_de_filaos",
     "bdHost" => "localhost",
     "bdUser" => "root",
     "bdPwd" => ""

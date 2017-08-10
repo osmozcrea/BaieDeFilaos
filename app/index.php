@@ -9,8 +9,8 @@ require(ROOT.'core/controller.php');
 
 //Recupération des paramètres URL
 $params = explode('/', $_GET['p']);
-$controller = $params[0];
-$action = (isset($params[1])) ? $params[1] : 'index';
+$controller = (isset($params[0]) && !empty($params[0])) ? $params[0] : 'index';
+$action = (isset($params[1]) && !empty($params[1])) ? $params[1] : 'index';
 
 require('controllers/'.$controller.'.php');
 $controller = new $controller();
