@@ -2,7 +2,7 @@
 
 class Model
 {
-    private $db;
+    protected $db;
     protected $table;
     private $id;
 
@@ -16,6 +16,7 @@ class Model
     ///////////////////////////////////////
     /**
      *Définit la connexion à la BD
+     *
      * @param PDO $db Variable de connexion de type pdo
      **/
     public function setDb(PDO $db)
@@ -56,6 +57,8 @@ class Model
      *
      * @param string $id Identifiant de l'élément à recupérer
      * @param array $tab_champ Liste des champs à recupérer
+     *
+     * @return
      **/
     public function get($id, array $tab_champ = NULL)
     {
@@ -75,6 +78,9 @@ class Model
             } catch (Exception $ex) {
                 echo "Erreur recupération : ", $ex->getMessage();
             }
+        }
+        else{
+            return null;
         }
     }
 
@@ -102,6 +108,8 @@ class Model
     /**
      *Enregistre une ligne dans la base de données
      * @param array $data Tableau associatif des valeurs à enregistrer
+     *
+     * @return L'id de l'élément inséré | null
      **/
     public function add(array $data)
     {
@@ -125,6 +133,9 @@ class Model
             if ($test_execute) {
                 return $this->db->lastInsertId($this->table . '.id');
             }
+            else{
+                return null;
+            }
         } catch (Exception $ex) {
             echo "Erreur enregistrement : ", $ex->getMessage();
         }
@@ -132,8 +143,11 @@ class Model
 
     /**
      *Met à jour une ligne de la base de données par rapport à l'id de l'objet
+     *
      * @param int $id Identifiant de l'élément à mettre à jour
      * @param array $data Tableau associatif des valeurs à mettre à jour
+     *
+     * @return boolean
      **/
     public function update($id, array $data)
     {
@@ -153,7 +167,7 @@ class Model
             try {
                 $requete = 'UPDATE ' . $this->table . ' SET ' . $set . ' WHERE id= :id';
                 $resultat = $this->db->prepare($requete);
-                $resultat->bindValue('id', $this->id, PDO::PARAM_INT);
+                $resultat->bindValue('id', $id, PDO::PARAM_INT);
                 $test_execute = $resultat->execute();
                 $resultat->closeCursor();
 
@@ -168,6 +182,8 @@ class Model
      * Supprime une ligne de la base de données par rapport à l'id de l'objet
      *
      * @param int $id Identifiant de l'élément à supprimer
+     *
+     * @return boolean
      **/
     public function delete($id)
     {
@@ -176,7 +192,7 @@ class Model
             try {
                 $requete = 'DELETE FROM ' . $this->table . ' WHERE id= :id';
                 $resultat = $this->db->prepare($requete);
-                $resultat->bindValue('id', $this->id, PDO::PARAM_INT);
+                $resultat->bindValue('id', $id, PDO::PARAM_INT);
                 $test_execute = $resultat->execute();
                 $resultat->closeCursor();
 
@@ -189,6 +205,8 @@ class Model
 
     /**
      *Récupère le nombre total d'enrgistrement de la table
+     *
+     * @return
      **/
     public function getNb()
     {
