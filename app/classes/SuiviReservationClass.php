@@ -46,4 +46,12 @@ class SuiviReservationClass
         $this->_date = $date;
     }
 
+    /**
+     * Retourne un tableau associatif réprésentant l'objet à partir de ses attributs comme index et leurs valeurs
+     * @return array
+     */
+    public function toArray(){
+        return get_object_vars($this);
+    }
+
 }

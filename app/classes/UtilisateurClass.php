@@ -43,11 +43,11 @@ abstract class UtilisateurClass
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
-        return $this->_id;
+        return (int) $this->_id;
     }
 
     /**
@@ -153,6 +153,14 @@ abstract class UtilisateurClass
         {
             $this->_pwd = $pwd;
         }
+    }
+
+    /**
+     * Retourne un tableau associatif réprésentant l'objet à partir de ses attributs comme index et leurs valeurs
+     * @return array
+     */
+    public function toArray(){
+        return get_object_vars($this);
     }
 
 }

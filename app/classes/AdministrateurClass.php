@@ -12,5 +12,4 @@ require_once(ROOT.'classes/UtilisateurClass.php');
 class AdministrateurClass extends UtilisateurClass
 {
 
-
 }

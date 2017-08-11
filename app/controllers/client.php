@@ -6,22 +6,46 @@ class client extends Controller{
 	var $models = array('ClientMysql');
 
     /**
-     * Liste l'ensemble des clients de la BD
+     * Liste l'ensemble des clients de la BD dans la vue index
+     *
      */
 	public function index(){
-		$donnees = array('dateNaissance', 'pieceIdentite', 'profession', 'paysResidence', 'villeResidence');
-		$tab_data['data'] = $this->ClientMysql->getAll($donnees);
+		$tab_data['data'] = $this->ClientMysql->getClients();
 		
 		$this->loadView('index', $tab_data);
 	}
 
     /**
-     * Ajoute un client à la BD
+     * Affiche le détails d'un client dans la vue détails
+     */
+	public function detailClient($idClient){
+	    $idClient = (int) $idClient;
+	    if(isset($idClient) && $idClient > 0){
+            $tab_data['data'] = $this->ClientMysql->getClient($idClient);
+
+            $this->loadView('details', $tab_data);
+        }
+        else{
+	        echo "Veuillez renseigner l'id du client";
+        }
+    }
+
+    /**
+     * Affiche le formulaire d'inscription
+     */
+    public function inscription(){
+        $this->loadView('inscription', null);
+    }
+
+    /**
+     * Ajoute un client à la BD et retourne les détails de ce client au format JSON
      */
 	public function inscrire(){
-        $idClientAjoute = $this->ClientMysql->inscrire($_POST);
+	    if(isset($_POST)){
+            $client = $this->ClientMysql->inscrireClient($_POST);
 
-        var_dump($idClientAjoute);
+            echo json_encode($client->toArray());
+        }
     }
 
 }

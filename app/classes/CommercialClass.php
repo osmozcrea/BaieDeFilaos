@@ -29,6 +29,4 @@ class CommercialClass extends UtilisateurClass
         $this->_clients = $clients;
     }
 
-
-
 }
