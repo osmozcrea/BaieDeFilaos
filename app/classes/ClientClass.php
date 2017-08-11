@@ -114,6 +114,4 @@ class ClientClass extends UtilisateurClass
         }
     }
 
-
-
 }
