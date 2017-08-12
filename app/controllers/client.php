@@ -44,8 +44,16 @@ class client extends Controller{
 	    if(isset($_POST)){
             $client = $this->ClientMysql->inscrireClient($_POST);
 
-            echo json_encode($client->toArray());
+            echo json_encode($client);
         }
+    }
+
+    /**
+     * Retourne la liste des clients au format JSON
+     */
+    public function chargerListeClients(){
+        $tab_data['data'] = $this->ClientMysql->getClients();
+        echo json_encode($tab_data);
     }
 
 }

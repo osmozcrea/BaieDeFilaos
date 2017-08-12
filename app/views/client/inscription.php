@@ -1,8 +1,25 @@
+<?php
+    require_once(ROOT.'helpers/loadSrcHelper.php');
+?>
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Inscription d'un client</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Inscription Client</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="osmoz"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Data table CSS -->
+    <link href="<?= loadSrcHelper::loadSRC(WEBROOT, "vendors/bower_components/datatables/media/css/jquery.dataTables.min.css") ?>" rel="stylesheet" type="text/css"/>
+
+    <link href="<?= loadSrcHelper::loadSRC(WEBROOT, "vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css") ?>" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
@@ -57,5 +74,15 @@
 
     </div>
 
+
+    <!-- jQuery -->
+    <script src="<?= loadSrcHelper::loadSRC(WEBROOT, "vendors/bower_components/jquery/dist/jquery.min.js") ?>"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?= loadSrcHelper::loadSRC(WEBROOT, "vendors/bower_components/bootstrap/dist/js/bootstrap.min.js") ?>"></script>
+
+    <!-- Data table JavaScript -->
+    <script src="<?= loadSrcHelper::loadSRC(WEBROOT, "vendors/bower_components/datatables/media/js/jquery.dataTables.min.js") ?>"></script>
+    <script src="<?= loadSrcHelper::loadSRC(WEBROOT, "js/dataTables-listeClients.js") ?>"></script>
 </body>
 </html>
