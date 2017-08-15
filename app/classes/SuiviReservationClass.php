@@ -8,27 +8,59 @@
  */
 class SuiviReservationClass
 {
-    private $_id;
+   // private $_id;
     private $_date;
 
-    private $_reservation;
-    private $_statutReservation;
+    private $_idReservation;
+    private $_idStatutReservation;
 
     /**
      * @return mixed
      */
-    public function getId()
+    public function getIdReservation()
+    {
+        return $this->_idReservation;
+    }
+
+    /**
+     * @param mixed $idReservation
+     */
+    public function setIdReservation($idReservation)
+    {
+        $this->_idReservation = $idReservation;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdStatutReservation()
+    {
+        return $this->_idStatutReservation;
+    }
+
+    /**
+     * @param mixed $idStatutReservation
+     */
+    public function setIdStatutReservation($idStatutReservation)
+    {
+        $this->_idStatutReservation = $idStatutReservation;
+    }
+
+    /**
+     * @return mixed
+     */
+/*    public function getId()
     {
         return $this->_id;
-    }
+    }*/
 
     /**
      * @param mixed $id
      */
-    public function setId($id)
+/*    public function setId($id)
     {
         $this->_id = $id;
-    }
+    }*/
 
     /**
      * @return mixed

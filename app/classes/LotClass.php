@@ -14,6 +14,23 @@ class LotClass
     private $_latitude;
     private $_altitude;
     private $_titreFoncier;
+    private $_idTerrain;
+
+    /**
+     * @return mixed
+     */
+    public function getIdTerrain()
+    {
+        return $this->_idTerrain;
+    }
+
+    /**
+     * @param mixed $idTerrain
+     */
+    public function setIdTerrain($idTerrain)
+    {
+        $this->_idTerrain = $idTerrain;
+    }
 
     /**
      * @return mixed

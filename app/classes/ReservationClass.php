@@ -10,10 +10,72 @@ class ReservationClass
 {
     private $_id;
     private $_date;
-    private $_statut;
 
-    private $_client;
-    private $_terrain;
+    /**
+     * @return mixed
+     */
+    public function getIdClient()
+    {
+        return $this->_idClient;
+    }
+
+    /**
+     * @param mixed $idClient
+     */
+    public function setIdClient($idClient)
+    {
+        $this->_idClient = $idClient;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdLot()
+    {
+        return $this->_idLot;
+    }
+
+    /**
+     * @param mixed $idLot
+     */
+    public function setIdLot($idLot)
+    {
+        $this->_idLot = $idLot;
+    }
+
+    /**
+     * @return array
+     */
+    public function getStatutReservations()
+    {
+        return $this->_statutReservations;
+    }
+
+    /**
+     * @param array $statutReservations
+     */
+    public function setStatutReservations($statutReservations)
+    {
+        $this->_statutReservations = $statutReservations;
+    }
+
+    /**
+     * @return array
+     */
+    public function getVersements()
+    {
+        return $this->_versements;
+    }
+
+    /**
+     * @param array $versements
+     */
+    public function setVersements($versements)
+    {
+        $this->_versements = $versements;
+    }
+    private $_idClient;
+    private $_idLot;
 
     private $_statutReservations = array();
     private $_versements = array();
@@ -48,22 +110,6 @@ class ReservationClass
     public function setDate($date)
     {
         $this->_date = $date;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStatut()
-    {
-        return $this->_statut;
-    }
-
-    /**
-     * @param mixed $statut
-     */
-    public function setStatut($statut)
-    {
-        $this->_statut = $statut;
     }
 
     /**

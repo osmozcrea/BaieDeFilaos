@@ -15,6 +15,23 @@ class VersementClass
     private $_montantVerse;
     private $_modePaiement;
     private $_justificatif;
+    private $_idReservation;
+
+    /**
+     * @return mixed
+     */
+    public function getIdReservation()
+    {
+        return $this->_idReservation;
+    }
+
+    /**
+     * @param mixed $idReservation
+     */
+    public function setIdReservation($idReservation)
+    {
+        $this->_idReservation = $idReservation;
+    }
 
     /**
      * @return mixed

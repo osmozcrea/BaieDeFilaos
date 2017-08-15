@@ -16,8 +16,7 @@ class ClientClass extends UtilisateurClass
     private $_profession;
     private $_paysResidence;
     private $_villeResidence;
-
-    private $_terrains = array();
+    private $_idCommercial;
 
     /**
      * @return mixed
@@ -113,5 +112,23 @@ class ClientClass extends UtilisateurClass
             $this->_villeResidence = $villeResidence;
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdCommercial()
+    {
+        return $this->_idCommercial;
+    }
+
+    /**
+     * @param mixed $idCommercial
+     */
+    public function setIdCommercial($idCommercial)
+    {
+        $this->_idCommercial = $idCommercial;
+    }
+
+
 
 }
