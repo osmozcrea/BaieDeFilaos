@@ -35,19 +35,19 @@ class ClientMysql extends Model{
             $resultat = $this->db->prepare($requete);
 
             if(!is_null($client->getNom())){
-                $resultat->bindValue('nom', $_POST["nom"], PDO::PARAM_STR);
+                $resultat->bindValue('nom', $client->getNom(), PDO::PARAM_STR);
             }
             if(!is_null($client->getPrenom())){
-                $resultat->bindValue('prenom', $_POST["prenom"], PDO::PARAM_STR);
+                $resultat->bindValue('prenom', $client->getPrenom(), PDO::PARAM_STR);
             }
             if(!is_null($client->getEmail())){
-                $resultat->bindValue('email', $_POST["email"], PDO::PARAM_STR);
+                $resultat->bindValue('email', $client->getEmail(), PDO::PARAM_STR);
             }
             if(!is_null($client->getLogin())){
-                $resultat->bindValue('login', $_POST["login"], PDO::PARAM_STR);
+                $resultat->bindValue('login', $client->getLogin(), PDO::PARAM_STR);
             }
             if(!is_null($client->getPwd())){
-                $resultat->bindValue('pwd', $_POST["pwd"], PDO::PARAM_STR);
+                $resultat->bindValue('pwd', $client->getPwd(), PDO::PARAM_STR);
             }
 
             $test_execute = $resultat->execute();
@@ -88,7 +88,8 @@ class ClientMysql extends Model{
                             pieceidentite,
                             profession,
                             paysresidence,
-                            villeresidence
+                            villeresidence,
+                            id_commercial
                         FROM FROM '. $this->table .'
                         INNER JOIN utilisateur ON utilisateur.id = client.id
                         WHERE client.id = :id';
@@ -123,7 +124,8 @@ class ClientMysql extends Model{
                         pieceidentite,
                         profession,
                         paysresidence,
-                        villeresidence
+                        villeresidence,
+                        id_commercial
                     FROM '. $this->table .'
                     INNER JOIN utilisateur ON utilisateur.id = client.id';
            $resultat = $this->db->query($requete);
@@ -154,6 +156,7 @@ class ClientMysql extends Model{
             $requete .= (!is_null($client->getProfession())) ? " ,profession = :profession" : "";
             $requete .= (!is_null($client->getDateNaissance())) ? " ,datenaissance = :datenaissance" : "";
             $requete .= (!is_null($client->getPieceIdentite())) ? " ,pieceidentite = :pieceidentite" : "";
+            $requete .= (!is_null($client->getIdCommercial())) ? " ,id_commercial = :id_commercial" : "";
 
             $resultat = $this->db->prepare($requete);
             $resultat->bindValue('id', $client->getId(), PDO::PARAM_INT);
@@ -172,6 +175,9 @@ class ClientMysql extends Model{
             }
             if(!is_null($client->getPieceIdentite())){
                 $resultat->bindValue('pieceidentite', $client->getPieceIdentite(), PDO::PARAM_STR);
+            }
+            if(!is_null($client->getIdCommercial())){
+                $resultat->bindValue('id_commercial', $client->getIdCommercial(), PDO::PARAM_INT);
             }
 
             $test_execute = $resultat->execute();
